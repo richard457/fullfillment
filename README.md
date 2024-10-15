@@ -1,4 +1,5 @@
-# Flask Project with Poetry
+[![Build status](https://github.com/richard457/fullfillment/actions/workflows/tests.yml/badge.svg)](https://github.com/richard457/fullfillment/actions/workflows/tests.yml)
+# Order Fullfilment project
 
 This project is a simple Flask application managed using Poetry for dependency management.
 
