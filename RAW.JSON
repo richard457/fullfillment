@@ -1,0 +1,83 @@
+{
+    "info": {
+      "_postman_id": "d4f6809f-2687-4750-a3c9-60b571b3938c",
+      "name": "Inventory Manager API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "_postman_exported_at": "2023-10-26T16:58:55.696Z",
+      "_postman_exported_using": "Postman/10.7.1"
+    },
+    "item": [
+      {
+        "name": "Init Catalog",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "[{\"product_id\": 1, \"name\": \"Product A\", \"mass_g\": 500}, {\"product_id\": 2, \"name\": \"Product B\", \"mass_g\": 1000}, {\"product_id\": 3, \"name\": \"Product C\", \"mass_g\": 200}]"
+          },
+          "url": "{{base_url}}/init_catalog"
+        },
+        "response": []
+      },
+      {
+        "name": "Process Order",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"order_id\": 1, \"requested\": [{\"product_id\": 1, \"quantity\": 2}, {\"product_id\": 2, \"quantity\": 1}]}"
+          },
+          "url": "{{base_url}}/process_order"
+        },
+        "response": []
+      },
+      {
+        "name": "Process Restock",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "[{\"product_id\": 1, \"quantity\": 3}, {\"product_id\": 2, \"quantity\": 2}]"
+          },
+          "url": "{{base_url}}/process_restock"
+        },
+        "response": []
+      },
+      {
+        "name": "Process Order (Pending)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"order_id\": 2, \"requested\": [{\"product_id\": 1, \"quantity\": 2}, {\"product_id\": 3, \"quantity\": 5}]}"
+          },
+          "url": "{{base_url}}/process_order"
+        },
+        "response": []
+      }
+    ]
+  }

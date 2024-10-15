@@ -1,4 +1,3 @@
-
 from typing import List, Dict
 import logging
 
@@ -64,7 +63,9 @@ class InventoryManager:
                 current_weight += product_weight * ship_quantity
                 self.inventory[product_id] -= ship_quantity
                 quantity -= ship_quantity
-                item['quantity'] = quantity
+
+            # Update item['quantity'] after the loop finishes
+            item['quantity'] = quantity
 
         if current_shipment["shipped"]:
             shipments.append(current_shipment)
