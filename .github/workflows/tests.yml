@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,6 +26,15 @@ jobs:
       run: |
         poetry install
     
+    - name: Debug information
+      run: |
+        pwd
+        ls -la
+        poetry --version
+        poetry show
+        poetry run which python
+        poetry run python --version
+    
     - name: Run tests
       run: |
-        poetry run test
+        poetry run pytest tests.py -v
